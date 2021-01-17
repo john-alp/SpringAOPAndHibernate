@@ -2,7 +2,7 @@ package aop;
 
 import org.springframework.stereotype.Component;
 
-@Component("libralyBean")
+@Component("libraryBean")
 public class Library {
     public void getBook() {
         System.out.println("We take the book");

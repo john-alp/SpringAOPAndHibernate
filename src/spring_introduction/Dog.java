@@ -1,5 +1,14 @@
 package spring_introduction;
 
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
+@Component("dogBean")
+@Scope("singleton")
+//@Scope("prototype")
 public class Dog implements Pet{
     private String name;
 
@@ -19,12 +28,16 @@ public class Dog implements Pet{
     public String getName() {
         return name;
     }
-    private void init() {
-        System.out.println("INIT");
-    }
 
-    private void destroy() {
-        System.out.println("DESTROY");
-    }
+
+//    @PostConstruct
+//    private void init() {
+//        System.out.println("INIT");
+//    }
+//
+//    @PreDestroy
+//    private void destroy() {
+//        System.out.println("DESTROY");
+//    }
 
 }

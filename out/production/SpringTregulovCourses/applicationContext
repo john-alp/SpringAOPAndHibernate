@@ -22,7 +22,7 @@
 <!--        <property name="surname" value="Solomatin"/>-->
 <!--        <property name="age" value="42"/>-->
 <!--   внедрение с помощью файла myApp.properties     -->
-        <property name="surname" value="${person.surname}"/>
+        <property name="surname" value="${per son.surname}"/>
         <property name="age" value="${person.age}"/>
     </bean>
 
