@@ -19,10 +19,12 @@ public class UniLibrary extends AbstractLibrary {
 
     }
 
-    public void returnBook() {
+    public String returnBook() {
+        int willException = 10/0;
         System.out.println("-------------------------------");
         System.out.println("We return the book of UniLibrary");
         System.out.println("-------------------------------");
+        return "12 chairs";
     }
 
     public void addMagazine() {

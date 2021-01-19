@@ -10,9 +10,13 @@ public class Test2 {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(MyConfig.class);
         University university = context.getBean("university", University.class);
         university.addStudents();
-
-        List<Student> students = university.getStudentList();
-        System.out.println(students);
+        List<Student> students;
+        try {
+            students = university.getStudentList();
+            System.out.println(students);
+        } catch (Exception e) {
+            System.out.println("I am try exception: " + e);
+        }
 
         context.close();
     }
