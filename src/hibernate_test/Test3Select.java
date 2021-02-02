@@ -7,7 +7,7 @@ import org.hibernate.cfg.Configuration;
 
 import java.util.List;
 
-public class Test3 {
+public class Test3Select {
     public static void main(String[] args) {
         SessionFactory factory = new Configuration().configure("hibernate.cfg.xml")
                         .addAnnotatedClass(Employee.class)

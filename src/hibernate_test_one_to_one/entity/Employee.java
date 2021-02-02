@@ -1,4 +1,4 @@
-package hibernate_test.entity;
+package hibernate_test_one_to_one.entity;
 
 import javax.persistence.*;
 
@@ -22,6 +22,15 @@ public class Employee {
 
     @Column
     private int salary;
+
+    /**
+     * @OneToOne() указывает на тип отношений между обьектами
+     * @JoinColumn указывает на столбец, который осуществляет связь с другим обьектом
+     */
+    @OneToOne(cascade = CascadeType.ALL)  // Uni directional
+    @JoinColumn(name = "details_id") // forent key for table employees и cc ылается на таблицу details(id)
+    // связь между таблицами и какие поля эту связь осуществляют
+    private Detail empDetail; // для связи между таблицами
 
     public Employee() {}
 
@@ -71,6 +80,14 @@ public class Employee {
 
     public void setSalary(int salary) {
         this.salary = salary;
+    }
+
+    public Detail getEmpDetail() {
+        return empDetail;
+    }
+
+    public void setEmpDetail(Detail empDetail) {
+        this.empDetail = empDetail;
     }
 
     @Override

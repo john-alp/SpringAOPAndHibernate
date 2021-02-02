@@ -12,12 +12,15 @@ public class Test1 {
                 .configure("hibernate.cfg.xml")
                 .addAnnotatedClass(Employee.class)
                 .buildSessionFactory();
-        Session session = factory.getCurrentSession();
-        session.beginTransaction();
-        session.save(new Employee("John", "Silver", "Sea", 3000));
-        session.getTransaction().commit();
-
-        factory.close();
-
+        try {
+            Session session = factory.getCurrentSession();
+            session.beginTransaction();
+            session.save(new Employee("Daria", "Brusnika",
+                    "IT", 3000));
+            session.getTransaction().commit();
+            System.out.println("Done ");
+        } finally {
+            factory.close();
+        }
     }
 }
